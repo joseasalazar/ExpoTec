@@ -1,0 +1,351 @@
+extends layout
+
+
+block content
+
+    // navbar
+    nav.navbar.navbar-dark.bg-primary.navbar-fixed-top
+      .container
+        ul.nav.navbar-nav
+          li.nav-item
+            a.nav-link(href='#buscar')
+              | Buscar 
+              span.sr-only (current)
+          li.nav-item
+            a.nav-link(href='#contenido') Contenido
+          li.nav-item
+            a.nav-link(href='#logistica') Logística
+          li.nav-item
+            a.nav-link(href='#expotec') Expotec
+          li.nav-item
+            a.nav-link(href='#care') CARE
+          li.nav-item
+            a.nav-link(href='#desarrollo') DE
+          li.nav-item
+            a.nav-link(href='#comite') CE
+          li.nav-item
+            a.nav-link(href='#asoc') Asociaciones
+          li.nav-item
+            a.nav-link(href='#invitados') Invitados
+          li.nav-item
+            a.nav-link(href='#proveedores') Proveedores
+          li.nav-item
+            a.nav-link(href='#prensa') Prensa
+        a.navbar-brand.pull-sm-right.m-r-0.hidden-xs-down(href='#') Expotec
+    // /navbar
+
+    // /jumbotron
+    .jumbotron.jumbotron-fluid.bg-info
+      .container.text-sm-center.p-t-3
+        h1.display-2 Registro Expotec
+        p
+          button.btn.btn-primary.btn-lg.m-r-1(type='button', data-toggle='modal', data-target='#staff-modal') Staff
+          button.btn.btn-primary.btn-lg.m-r-1(type='button', data-toggle='modal', data-target='#asociaciones-modal') Asociaciones
+          button.btn.btn-primary.btn-lg(type='button', data-toggle='modal', data-target='#externos-modal') Externos
+    // /jumbotron
+
+    .container.p-t-2
+      // search
+      .row
+        h1.text-md-center Buscar
+        form#buscar
+          .form-group
+            #staff-form
+              .form-group
+                label(for='nombre') Nombre
+                input#nombre.form-control(type='text', placeholder='Nombre')
+              .form-group
+                label Entrada/Salida
+                .radio
+                  label
+                    input(type='radio', name='optionsRadios', value='Dentro')
+                    |                     Entrada
+                .radio
+                  label
+                    input(type='radio', name='optionsRadios', value='Fuera')
+                    |                     Salida
+            button#buscarBoton.btn.btn-default(type='submit') Buscar
+
+      // /search
+      hr.m-y-2
+      // contenido
+      #titulocontenido
+      #contenido.row.text-md-center
+      // /contenido
+
+      hr.m-y-2
+      // logística
+      #titulologistica
+      #logistica.row.text-md-center
+      // /logística
+      hr.m-y-2
+      
+      // expotec
+      #tituloexpo
+      #expotec.row.text-md-center
+      // /expotec
+      hr.m-y-2
+      
+      // care
+      #titulocare
+      #care.row.text-md-center
+      // /care
+      hr.m-y-2
+      
+      // desarrollo
+      #titulodesarrollo
+      #desarrollo.row.text-md-center
+      // /desarrollo
+      hr.m-y-2
+      
+      // comite
+      #titulocomite
+      #comite.row.text-md-center
+      // /comite
+      hr.m-y-2
+
+      // asociaciones
+      #tituloasoc
+      #asoc.row.text-md-center
+      // /asociaciones
+      hr.m-y-2
+      
+      // invitadoes especiales
+      #tituloinvitados
+      #invitados.row.text-md-center
+      // /invitados especiales
+      hr.m-y-2
+      
+      // externos
+      #tituloproveedores
+      #proveedores.row.text-md-center
+      // /externos
+      hr.m-y-2
+      
+      // prensa
+      #tituloprensa
+      #prensa.row.text-md-center
+      // /prensa
+      hr.m-y-2
+
+      // footer
+      .row.p-y-1
+        .col-md-12.text-md-center
+          small © Created by José Andrés Salazar
+      // footer
+    // /.container
+    //
+
+    #staff-modal.modal.fade
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header.bg-info
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+            h4.modal-title Registro Staffs
+          .modal-body
+            // registration form
+            form
+              fieldset.form-group
+                label(for='name') Nombre:
+                input#name.form-control(type='text')
+              fieldset.form-group
+                label.form-control-label.p-l-0(for='mail') Correo:
+                input#mail.form-control(type='email')
+              .row
+                .col-lg-6.form-group
+                  label(for='job') Puesto:
+                  select#job.form-control
+                    option(value='-') -
+                    option(value='Contenido') Contenido
+                    option(value='Logistica') Logistica
+                    option(value='Expotec') Expotec Team
+                    option(value='CARE') CARE
+                    option(value='Comite Electoral') Comite Electoral
+                    option(value='Desarrollo Estudiantil') Desarrollo Estudiantil
+                .col-lg-3.form-group
+                  label(for='career') Carrera:
+                  select#career.form-control
+                    option(value='-') -
+                    option(value='LAF') LAF
+                    option(value='LCPF') LCPF
+                    option(value='LCDE') LCDE
+                    option(value='LDF') LDF
+                    option(value='LEC') LEC
+                    option(value='LLN') LLN
+                    option(value='LEM') LEM
+                    option(value='LMC') LMC
+                    option(value='LIN') LIN
+                    option(value='LPO') LPO
+                    option(value='LPM') LPM
+                    option(value='LAE') LAE
+                    option(value='LPL') LPL
+                    option(value='LCMD') LCMD
+                    option(value='LED') LED
+                    option(value='LDP') LDP
+                    option(value='LEF') LEF
+                    option(value='LLE') LLE
+                    option(value='LMI') LMI
+                    option(value='LP') LP
+                    option(value='LRI') LRI
+                    option(value='ARQ') ARQ
+                    option(value='LAD') LAD
+                    option(value='LDI') LDI
+                    option(value='IC') IC
+                    option(value='IDS') IDS
+                    option(value='IDA') IDA
+                    option(value='IID') IID
+                    option(value='INCQ') INCQ
+                    option(value='IMI') IMI
+                    option(value='IIS') IIS
+                    option(value='IMA') IMA
+                    option(value='IME') IME
+                    option(value='IQA') IQA
+                    option(value='IQP') IQP
+                    option(value='IMT') IMT
+                    option(value='INT') INT
+                    option(value='ISC') ISC
+                    option(value='ISD') ISD
+                    option(value='ITC') ITC
+                    option(value='ITIC') ITIC
+                    option(value='ITE') ITE
+                    option(value='ITS') ITS
+                    option(value='IFI') IFI
+                    option(value='IA') IA
+                    option(value='IBN') IBN
+                    option(value='IBT') IBT
+                    option(value='IIA') IIA
+                    option(value='IMD') IMD
+                    option(value='LNB') LNB
+                    option(value='LPS') LPS
+                    option(value='MC') MC
+                    option(value='MO') MO
+                .col-lg-3.form-group
+                  label(for='semester') Semestre:
+                  select#semester.form-control
+                    option(value='-') -
+                    option(value='1') 1
+                    option(value='2') 2
+                    option(value='3') 3
+                    option(value='4') 4
+                    option(value='5') 5
+                    option(value='6') 6
+                    option(value='7') 7
+                    option(value='8') 8
+                    option(value='9') 9+
+              .row
+                .col-lg-12.form-group
+                  label(for='subarea') Sub-Área:
+                  select#subarea.form-control
+                    option(value='-') -
+                    option(value='Contenido Interno') Contenido Interno
+                    option(value='Contenido Externo') Contenido Externo
+                    option(value='Espectaculos') Espectaculos
+                    option(value='Accesos y Seguridad') Accesos y Seguridad
+                    option(value='Bebidas') Bebidas
+                    option(value='Logistica Interna') Logistica Interna
+                    option(value='Logistica Externa') Logistica Externa
+                    option(value='Base') Base
+                    option(value='Proveedores') Proveedores
+                    option(value='Comodines') Comodines
+              hr.m-b-2
+              button#registroStaff.btn.btn-primary.btn-lg(type='submit') Registrar
+            // /registration form
+        // /.modal-content
+      // /.modal-dialog
+    // /.modal
+    //
+
+
+    #asociaciones-modal.modal.fade
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header.bg-info
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+            h4.modal-title Registro Asociaciones
+          .modal-body
+            // registration form
+            form
+              fieldset.form-group
+                label(for='name') Nombre:
+                input#name.form-control(type='text')
+              .row
+                .col-lg-6.form-group
+                  label(for='association') Asociacion:
+                  select#association.form-control
+                    option(value='-') -
+                    option(value='Durango') Durango
+                    option(value='Tabasco') Tabasco
+                    option(value='Sinaloa') Sinaloa
+                    option(value='Coahuila') Coahuila
+                    option(value='Hidalgo') Hidalgo
+                    option(value='Sudamerica') Sudamerica
+                    option(value='Guatemala') Guatemala
+                    option(value='Tamaulipas') Tamaulipas
+                    option(value='Chiapas') Chiapas
+                    option(value='Nuevo Leon') Nuevo Leon
+                    option(value='Baja California') Baja California
+                .col-lg-6.form-group
+                  label(for='career') Puesto:
+                  select#job.form-control
+                    option(value='-') -
+                    option(value='Presidente') Presidente
+                    option(value='Vicepresidente') Vicepresidente
+                    option(value='Secretario') Secretario
+                    option(value='Tesorero') Tesorero
+                    option(value='Coordinador de Campañas Financieras') Campañas Financieras
+                    option(value='Coordinador de Bienestar Estudiantil') Bienestar Estudiantil
+                    option(value='Coordinador de Desarrollo Social') Desarrollo Social
+                    option(value='Coordinador General') Coordinador General
+                    option(value='Coordinador de Eventos') Coordinador Eventos
+                    option(value='Coordinador de Proyectos') Coordinador Proyectos
+                    option(value='Coordinador de Comunicación e Imagen') Comunicación e Imagen
+                    option(value='Coordinador de Medios') Coordinador Medios
+                    option(value='Coordinador de EXPOTEC') Coordinador EXPOTEC
+                    option(value='Coordinador de Distritos') Coordinador Distritos
+                    option(value='Coordinador del Día del Tamaulipeco') Coordinador Día Tamaulipeco
+                    option(value='Coordinador de Capital Humano') Capital Humano
+              hr.m-b-2
+              button#registroAsoc.btn.btn-primary.btn-lg(type='submit') Registrar
+            // /registration form
+        // /.modal-content
+      // /.modal-dialog
+    // /.modal
+    //
+  
+
+    #externos-modal.modal.fade
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header.bg-info
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+            h4.modal-title Registro Externos
+          .modal-body
+            // registration form
+            form
+              fieldset.form-group
+                label(for='name') Nombre:
+                input#name.form-control(type='text')
+              .row
+                .col-lg-12.form-group
+                  label(for='subarea') Tipo:
+                  select#tipo.form-control
+                    option(value='-') -
+                    option(value='Invitado Especial') Invitado Especial
+                    option(value='Proveedor Externo') Proveedor Externo
+                    option(value='Proveedor de Comida') Proveedor de Comida
+                    option(value='Prensa') Prensa
+              fieldset.form-group
+                label.form-control-label.p-l-0(for='business') Empresa:
+                input#business.form-control(type='text')
+              fieldset.form-group
+                label(for='motivo') Motivo de entrada:
+                input#motivo.form-control(type='text')
+              hr.m-b-2
+              button#registroExterno.btn.btn-primary.btn-lg(type='submit') Registrar
+            // /registration form
+        // /.modal-content
+      // /.modal-dialog
+    // /.modal
